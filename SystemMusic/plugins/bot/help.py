@@ -248,8 +248,8 @@ from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMa
 
 from config import BANNED_USERS
 from strings import helpers
-from PURVIMUSIC import app
-from PURVIMUSIC.utils.decorators.language import languageCB
+from SystemMusic import app
+from SystemMusic.utils.decorators.language import languageCB
 
 
 @app.on_callback_query(filters.regex("music_callback") & ~BANNED_USERS)
