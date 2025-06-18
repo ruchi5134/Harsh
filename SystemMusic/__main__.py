@@ -48,7 +48,7 @@ async def init():
         exit()
     except:
         pass
-    await Anony.decorators()
+    await System.decorators()
     LOGGER("SystemMusic").info(
         "MADE BY APNA SYSTEM"
     )
