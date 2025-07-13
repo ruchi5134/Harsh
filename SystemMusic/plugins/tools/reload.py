@@ -9,6 +9,7 @@ from SystemMusic import app
 import re
 from os import getenv
 from SystemMusic.core.call import System
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from SystemMusic.misc import db, SPECIAL_ID, SUDOERS
 from SystemMusic.utils.database import get_assistant, get_authuser_names, get_cmode
 from SystemMusic.utils.decorators import ActualAdminCB, AdminActual, language
