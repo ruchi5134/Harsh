@@ -96,7 +96,7 @@ async def start_pm(client, message: Message, _):
                     text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>ᴛʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
                 )
     else:
-        out = music_start_panel(_)
+        out = private_panel(_)
         await message.reply_video(
             random.choice(NEXI_VID),
             caption=_["start_2"].format(message.from_user.mention, app.mention),
@@ -168,7 +168,7 @@ async def welcome(client, message: Message):
 @app.on_callback_query(filters.regex("go_to_start"))
 @LanguageStart
 async def go_to_home(client, callback_query: CallbackQuery, _):
-    out = music_start_panel(_)
+    out = private_panel(_)
     await callback_query.message.edit_text(
         text=_["start_2"].format(callback_query.message.from_user.mention, app.mention),
         reply_markup=InlineKeyboardMarkup(out),
