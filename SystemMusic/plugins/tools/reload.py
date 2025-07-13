@@ -7,7 +7,7 @@ from pyrogram.types import CallbackQuery, Message
 
 from SystemMusic import app
 from SystemMusic.core.call import System
-from SystemMusic.misc import db, SPECIAL_ID, SUDOERS
+from SystemMusic.misc import db, SPECIAL_ID
 from SystemMusic.utils.database import get_assistant, get_authuser_names, get_cmode
 from SystemMusic.utils.decorators import ActualAdminCB, AdminActual, language
 from SystemMusic.utils.formatters import alpha_to_int, get_readable_time
