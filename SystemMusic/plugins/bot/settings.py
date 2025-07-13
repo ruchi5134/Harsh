@@ -56,9 +56,9 @@ async def settings_mar(client, message: Message, _):
 @languageCB
 async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
-        InputMediaVideo("https://files.catbox.moe/y8lsqi.mp4", has_spoiler=True),
+        InputMediaPhoto("https://files.catbox.moe/k0wi5y.jpg", has_spoiler=True),
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data=f"go_to_start")]]
+            [[InlineKeyboardButton(text="𝗕𝗮𝗰𝗸", callback_data=f"go_to_start")]]
         ),
     )
     
